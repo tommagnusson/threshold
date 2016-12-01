@@ -1,0 +1,13 @@
+{
+  "manifest_version": 1,
+
+  "name": "Threshold",
+  "version": "0.1.0",
+  "description": "Provides a number to suggest if you should listen/watch the media you're previewing.",
+
+  "content_scripts": [{
+    "js": ["content.js"],
+    "matches": ["https://www.soundcloud.com/*"]
+  }]
+
+}
