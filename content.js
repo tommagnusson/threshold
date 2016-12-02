@@ -1,16 +1,27 @@
 
-let songs = document.getElementsByClassName('soundList__item');
+window.onload = function() {
 
-for (var i = 0; i < songs.length; i++) {
-  // grab number of likes and number of plays
-  // Since we're within the single song div, we only should yield one element
-  let likes = parseInt(songs.getElementsByClassName('sc-button-like')[0].innerHTML);
-  let plays = parseInt(songs.getElementsByClassName('sc-visuallyhidden')[0].innerHTML);
+  let songs = document.getElementsByClassName('soundList__item');
+  console.info("Hey I'm actually getting called.");
+  console.info(songs);
+  console.info(songs.length);
+  console.info(songs[0]);
+  for (var i = 0; i < songs.length; i++) {
 
-  let ratio = plays / likes; // simple ratio for now
+    let currentSong = songs[i];
 
-  // put the ratio next to the number of plays on the page
-  let stats = songs.getElementsByClassName('soundStats')[0];
-  let ratioElement = document.createElement('li');
-  ratioElemet.appendChild(document.createTextNode(ratio));
+    console.info("Iterating through " + i);
+    // grab number of likes and number of plays
+    // Since we're within the single song div, we only should yield one element
+    let likes = parseInt(currentSong.getElementsByClassName('sc-button-like')[0].innerHTML);
+    var plays = currentSong.getElementsByClassName('sc-visuallyhidden')[1].innerHTML; // second visually hidden element
+
+    plays = plays.replace(/\D/g, ''); // remove all non digit characters
+    console.info(parseInt(plays));
+
+    let ratio = parseInt(plays / likes); // simple ratio for now
+    console.info("Ratio: " + ratio);
+
+    songs
+  }
 }
